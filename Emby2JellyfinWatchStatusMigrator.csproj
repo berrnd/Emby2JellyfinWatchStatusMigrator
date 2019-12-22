@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>Emby2JellyfinWatchStatusMigrator.Program</StartupObject>
+	<PublishTrimmed>true</PublishTrimmed>
+	<PublishReadyToRun>true</PublishReadyToRun>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Authors>Bernd Bestel</Authors>
+    <Description>Migrates the watch status for all users from Emby to Jellyfin by directly using the database and remapping library items by their physical path and users by their name.</Description>
+    <Copyright>Bernd Bestel</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/berrnd/Emby2JellyfinWatchStatusMigrator</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine.Experimental" Version="0.3.0-alpha.19577.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.112" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;  pushd &quot;$(SolutionDir)&quot;&#xD;&#xA;  dotnet publish -r win-x64 -c release --no-build&#xD;&#xA;  popd&#xD;&#xA;)" />
+  </Target>
+
+</Project>
