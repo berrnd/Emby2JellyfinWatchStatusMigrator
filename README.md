@@ -9,7 +9,7 @@ This assumes that you have the same library (paths) and the same users (user nam
 
 **Warning:** It deletes/overwrites all watch infos in the Jellyfin database.
 
-Currently tested with Emby `3.5.3.5` and Jellyfin `10.4.3`.
+Currently tested with Emby `3.5.3` and Jellyfin `10.4.3`.
 
 ## How to use
 It's a console application, just download the [latest release](https://github.com/berrnd/Emby2JellyfinWatchStatusMigrator/releases) and follow the instructions or build it manually.
