@@ -20,6 +20,16 @@ namespace Emby2JellyfinWatchStatusMigrator
 				throw new FileNotFoundException($"Jellyfin library.db path was not found");
 			}
 
+			if (!File.Exists(embyUsersPath))
+			{
+				throw new FileNotFoundException($"Emby users.db path was not found");
+			}
+
+			if (!File.Exists(jellyfinUsersPath))
+			{
+				throw new FileNotFoundException($"Jellyfin users.db path was not found");
+			}
+
 
 			// Load Emby users
 			Console.WriteLine("Loading Emby users");
