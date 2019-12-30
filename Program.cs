@@ -3,6 +3,7 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Emby2JellyfinWatchStatusMigrator
 {
@@ -10,7 +11,10 @@ namespace Emby2JellyfinWatchStatusMigrator
 	{
 		static void Main(string[] args)
 		{
-			Console.BufferWidth = Console.BufferWidth * 2;
+			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+			{
+				Console.BufferWidth = Console.BufferWidth * 2;
+			}
 
 			RootCommand rootCommand = new RootCommand
 			{

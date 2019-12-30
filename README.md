@@ -12,7 +12,7 @@ This assumes that you have the same library (paths) and the same users (user nam
 Currently tested with Emby `3.5.3` and Jellyfin `10.4.3`.
 
 ## How to use
-It's a console application, just download the [latest release](https://github.com/berrnd/Emby2JellyfinWatchStatusMigrator/releases) and follow the instructions or build it manually.
+It's a console application, just download the [latest release](https://github.com/berrnd/Emby2JellyfinWatchStatusMigrator/releases) for your OS and follow the instructions or build it manually.
 
 ```
 Emby2JellyfinWatchStatusMigrator:
@@ -31,7 +31,7 @@ Options:
 ```
 
 ## How to build
-This is a .Net Core 3.1 application, so just open the solution in Visual Studio 2019. The self-contained-single-executable is created during the post-build-event when using the `Release` configuration. Alternatively build the project manually by using standard .Net Core tooling.
+This is a .Net Core 3.1 application, so just open the solution in Visual Studio 2019. The self-contained-single-executable for all platforms is created by the script `release.ps1`. Alternatively build the project manually by using standard .Net Core tooling.
 
 ## License
 The MIT License (MIT)
